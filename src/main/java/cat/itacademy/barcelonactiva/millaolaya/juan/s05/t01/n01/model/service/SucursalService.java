@@ -9,6 +9,6 @@ import java.util.Optional;
 public interface SucursalService {
     List<SucursalDTO> findAll();
     Optional<SucursalDTO> findById(Integer id);
-    Sucursal save (SucursalDTO sucursalDto);
+    SucursalDTO save (SucursalDTO sucursalDto);
     void deleteById (Integer id);
 }

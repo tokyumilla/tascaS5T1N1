@@ -31,9 +31,10 @@ public class SucursalServiceImp implements SucursalService {
     }
 
     @Override
-    public Sucursal save(SucursalDTO sucursalDto) {
+    public SucursalDTO save(SucursalDTO sucursalDto) {
         SucursalConverter converter = new SucursalConverter();
-        return sucursalRepository.save(converter.fromDto(sucursalDto));
+        sucursalRepository.save(converter.fromDto(sucursalDto));
+        return sucursalDto;
     }
 
 
