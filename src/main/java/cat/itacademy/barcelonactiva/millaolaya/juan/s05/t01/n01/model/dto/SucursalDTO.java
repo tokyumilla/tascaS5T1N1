@@ -53,8 +53,13 @@ public class SucursalDTO implements Serializable {
         return tipusSucursal;
     }
 
-    public SucursalDTO(String nomSucursal, String paisSucursal) {
+    public SucursalDTO(Integer pk_SucursalID, String nomSucursal, String paisSucursal) {
+        this.pk_SucursalID = pk_SucursalID;
+        this.nomSucursal = nomSucursal;
+        this.paisSucursal = paisSucursal;
+    }
 
+    public SucursalDTO(String nomSucursal, String paisSucursal) {
         this.nomSucursal = nomSucursal;
         this.paisSucursal = paisSucursal;
     }
