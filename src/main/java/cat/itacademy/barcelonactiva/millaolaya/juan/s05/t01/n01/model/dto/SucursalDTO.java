@@ -10,7 +10,7 @@ public class SucursalDTO implements Serializable {
     private String paisSucursal;
 
     private final ArrayList<String> paissos = paissos();
-    private String tipusSucursal = setTipusSucursal(paisSucursal,paissos);
+    private String tipusSucursal;
 
     public ArrayList<String> paissos () {
         ArrayList<String> paissos = new ArrayList<>();
@@ -43,7 +43,7 @@ public class SucursalDTO implements Serializable {
         return paissos;
     }
 
-    public String setTipusSucursal (String paisSucursal, ArrayList<String> paissos) {
+    public String setTipusSucursal () {
         String tipusSucursal;
         if (paissos.contains(paisSucursal)) {
             tipusSucursal= "comunitario";
@@ -53,15 +53,19 @@ public class SucursalDTO implements Serializable {
         return tipusSucursal;
     }
 
+    public SucursalDTO() {}
+
     public SucursalDTO(Integer pk_SucursalID, String nomSucursal, String paisSucursal) {
         this.pk_SucursalID = pk_SucursalID;
         this.nomSucursal = nomSucursal;
         this.paisSucursal = paisSucursal;
+        this.tipusSucursal = setTipusSucursal();
     }
 
     public SucursalDTO(String nomSucursal, String paisSucursal) {
         this.nomSucursal = nomSucursal;
         this.paisSucursal = paisSucursal;
+        this.tipusSucursal = setTipusSucursal();
     }
 
     public Integer getPk_SucursalID() {
