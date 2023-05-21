@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+
+<html xmlns:th="http://www.thymeleaf.org">
+<head th:replace="template :: head">
+
+    <meta charset="UTF-8">
+    <title>Title</title>
+
+</head>
+<body>
+<header th:replace="template :: header">
+</header>
+<div class="container">
+    <h1 th:text="${titulo}"></h1>
+</div>
+<div class="container">
+<a class="btn btn-primary" th:href="@{/view/create}" role="button">Nueva Sucursal</a>
+    <table class="table table-bordered border-black">
+        <thead>
+        <tr class="table-dark">
+            <th scope="col">Id</th>
+            <th scope="col">Nom </th>
+            <th scope="col">Pais</th>
+            <th scope="col">Tipus</th>
+            <th scope="col">Editar</th>
+            <th scope="col">Eliminar</th>
+
+        </tr>
+        </thead>
+        <tbody>
+        <tr th:each="sc:${sucursales}">
+            <th scope="row" th:text="${sc.pk_SucursalID}"></th>
+            <td th:text="${sc.nomSucursal}"></td>
+            <td th:text="${sc.paisSucursal}"></td>
+            <td th:text="${sc.tipusSucursal}"></td>
+            <td>
+                <a class="btn btn-success" th:href="@{/view/edit/}+ ${sc.pk_SucursalID}" role="button">Editar</a>
+            </td>
+            <td>
+                <a class="btn btn-danger" th:href="@{/view/delete/}+ ${sc.pk_SucursalID}" role="button" onclick="return confirm('¿Está seguro/a de eliminar el registro?')">Eliminar</a>
+            </td>
+        </tr>
+        </tbody>
+    </table>
+</div>
+
+<footer th:replace="template :: footer"></footer>
+</body>
+</html>
