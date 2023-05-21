@@ -11,6 +11,9 @@ public class SucursalConverter extends AbstractConverter <Sucursal, SucursalDTO>
     @Override
     public Sucursal fromDto(SucursalDTO dto) {
         Sucursal sucursal = new Sucursal();
+        if(dto.getPk_SucursalID()!=null) {
+            sucursal.setPk_SucursalID(dto.getPk_SucursalID());
+        }
         sucursal.setNomSucursal(dto.getNomSucursal());
         sucursal.setPaisSucursal(dto.getPaisSucursal());
         return sucursal;
