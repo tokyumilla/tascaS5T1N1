@@ -96,4 +96,13 @@ public class SucursalDTO implements Serializable {
         return tipusSucursal;
     }
 
+    @Override
+    public String toString() {
+        return "SucursalDTO{" +
+                "pk_SucursalID=" + pk_SucursalID +
+                ", nomSucursal='" + nomSucursal + '\'' +
+                ", paisSucursal='" + paisSucursal + '\'' +
+                ", tipusSucursal='" + tipusSucursal + '\'' +
+                '}';
+    }
 }

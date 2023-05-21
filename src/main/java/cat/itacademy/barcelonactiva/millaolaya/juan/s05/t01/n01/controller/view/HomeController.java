@@ -1,4 +1,4 @@
-package cat.itacademy.barcelonactiva.millaolaya.juan.s05.t01.n01.controller;
+package cat.itacademy.barcelonactiva.millaolaya.juan.s05.t01.n01.controller.view;
 
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
